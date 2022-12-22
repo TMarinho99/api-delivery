@@ -1,7 +1,7 @@
 -- CreateTable
 CREATE TABLE "deliveryman" (
     "id" TEXT NOT NULL,
-    "usename" TEXT NOT NULL,
+    "username" TEXT NOT NULL,
     "password" TEXT NOT NULL,
 
     CONSTRAINT "deliveryman_pkey" PRIMARY KEY ("id")
@@ -10,7 +10,7 @@ CREATE TABLE "deliveryman" (
 -- CreateTable
 CREATE TABLE "clients" (
     "id" TEXT NOT NULL,
-    "usename" TEXT NOT NULL,
+    "username" TEXT NOT NULL,
     "password" TEXT NOT NULL,
 
     CONSTRAINT "clients_pkey" PRIMARY KEY ("id")
@@ -29,10 +29,10 @@ CREATE TABLE "Deliveries" (
 );
 
 -- CreateIndex
-CREATE UNIQUE INDEX "deliveryman_usename_key" ON "deliveryman"("usename");
+CREATE UNIQUE INDEX "deliveryman_username_key" ON "deliveryman"("username");
 
 -- CreateIndex
-CREATE UNIQUE INDEX "clients_usename_key" ON "clients"("usename");
+CREATE UNIQUE INDEX "clients_username_key" ON "clients"("username");
 
 -- AddForeignKey
 ALTER TABLE "Deliveries" ADD CONSTRAINT "Deliveries_id_client_fkey" FOREIGN KEY ("id_client") REFERENCES "clients"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
